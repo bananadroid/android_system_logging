@@ -139,11 +139,6 @@ cc_defaults {
         "-DLIBLOG_LOG_TAG=1006",
         "-DSNET_EVENT_LOG_TAG=1397638484",
     ],
-    product_variables: {
-        debuggable: {
-            cflags: ["-DDEBUGGABLE"],
-        },
-    },
     logtags: ["event.logtags"],
     compile_multilib: "both",
     afdo: true,

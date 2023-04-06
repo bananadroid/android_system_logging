@@ -262,16 +262,12 @@ int __android_log_is_loggable(int prio, const char* tag, int default_prio) {
 }
 
 int __android_log_is_debuggable() {
-#ifdef DEBUGGABLE
-  return 1;
-#else
   static int is_debuggable = [] {
     char value[PROP_VALUE_MAX] = {};
     return __system_property_get("ro.debuggable", value) > 0 && !strcmp(value, "1");
   }();
 
   return is_debuggable;
-#endif
 }
 
 /*
